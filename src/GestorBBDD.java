@@ -36,4 +36,6 @@ public class GestorBBDD extends Conector{
 		
 		return cliente;
 	}
+	
+	
 }
