@@ -32,10 +32,7 @@ public class FormularioDatos {
 	}
 	
 	public static Cliente pedirNuevoCliente(Scanner scan) {
-		Cliente cliente = new Cliente();
-		
-		System.out.println("Introduce el DNI nuevo");
-		cliente.setDni(scan.nextLine());
+		Cliente cliente=new Cliente();
 		
 		System.out.println("Introduce el nombre nuevo");
 		cliente.setNombre(scan.nextLine());

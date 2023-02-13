@@ -25,9 +25,8 @@ public class GestorCliente {
 				BBDD.cerrar();
 				break;
 			case Menu.MODIFICAR_CLIENTE:
-				cliente = BBDD.getCliente(FormularioDatos.pedirDniCliente(scan));
 				BBDD.conectar();
-				
+				BBDD.modificarCliente(FormularioDatos.pedirNuevoCliente(scan),FormularioDatos.pedirDniCliente(scan));
 				BBDD.cerrar();
 			default:
 				break;
