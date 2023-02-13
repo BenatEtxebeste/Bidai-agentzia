@@ -30,4 +30,25 @@ public class FormularioDatos {
 		
 		return dni;
 	}
+	
+	public static Cliente pedirNuevoCliente(Scanner scan) {
+		Cliente cliente = new Cliente();
+		
+		System.out.println("Introduce el DNI nuevo");
+		cliente.setDni(scan.nextLine());
+		
+		System.out.println("Introduce el nombre nuevo");
+		cliente.setNombre(scan.nextLine());
+		
+		System.out.println("Introduce los apellidos nuevos");
+		cliente.setApellidos(scan.nextLine());
+		
+		System.out.println("Introduce la nueva direccion");
+		cliente.setDireccion(scan.nextLine());
+		
+		System.out.println("Introduce la localidad nueva");
+		cliente.setLocalidad(scan.nextLine());
+		
+		return cliente;
+	}
 }
