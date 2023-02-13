@@ -28,10 +28,13 @@ public class GestorCliente {
 				BBDD.conectar();
 				BBDD.modificarCliente(FormularioDatos.pedirNuevoCliente(scan),FormularioDatos.pedirDniCliente(scan));
 				BBDD.cerrar();
+			case Menu.VER_CLIENTES:
+				BBDD.conectar();
+				Visor.mostrarClientes(BBDD.getClientes());
+				BBDD.cerrar();
 			default:
 				break;
 			}
 		} while (opcion != Menu.SALIR);
-		
 	}
 }

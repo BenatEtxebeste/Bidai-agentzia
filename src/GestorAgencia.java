@@ -14,7 +14,6 @@ public class GestorAgencia {
 			case Menu.GESTIONAR_CLIENTES:
 				GestorCliente.run(scan);
 				break;
-
 			default:
 				break;
 			}

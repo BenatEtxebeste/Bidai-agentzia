@@ -1,6 +1,7 @@
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class GestorBBDD extends Conector{
 	PreparedStatement pst;
@@ -49,5 +50,24 @@ public class GestorBBDD extends Conector{
 		pst.setString(5, dni);
 		
 		pst.executeUpdate();
+	}
+	
+	public ArrayList<Cliente> getClientes() throws SQLException{
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		
+		String sentenciaSelect = "SELECT * FROM clientes";
+		pst = super.con.prepareStatement(sentenciaSelect);
+		ResultSet resultado = pst.executeQuery();
+		while (resultado.next()) {
+			Cliente cliente = new Cliente();
+			cliente.setDni(resultado.getString("dni"));
+			cliente.setNombre(resultado.getString("nombre"));
+			cliente.setApellidos(resultado.getString("apellidos"));
+			cliente.setDireccion(resultado.getString("direccion"));
+			cliente.setLocalidad(resultado.getString("localidad"));
+			clientes.add(cliente);
+		}
+		
+		return clientes;
 	}
 }
