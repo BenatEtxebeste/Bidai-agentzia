@@ -15,6 +15,11 @@ public class Menu {
 	public static final int MODIFICAR_HABITACION = 3;
 	public static final int VER_HABITACIONES = 4;
 	
+	public static final int INSERTAR_HOTEL = 1;
+	public static final int ELIMINAR_HOTEL = 2;
+	public static final int MODIFICAR_HOTEL = 3;
+	public static final int VER_HOTELES = 4;
+	
 	public static final int INSERTAR_RESERVA = 1;
 	public static final int ELIMINAR_RESERVA = 2;
 	public static final int MODIFICAR_RESERVA = 3;
@@ -36,6 +41,7 @@ public class Menu {
 		System.out.println(ELIMINAR_CLIENTE + ". eliminar cliente");
 		System.out.println(MODIFICAR_CLIENTE + ". modificar cliente");
 		System.out.println(VER_CLIENTES + ". ver clientes");
+		System.out.println(SALIR + ". salir");
 	}
 	
 	public static void mostrarMenuHabitacion() {
@@ -44,5 +50,24 @@ public class Menu {
 		System.out.println(ELIMINAR_HABITACION + ". eliminar habitacion");
 		System.out.println(MODIFICAR_HABITACION + ". modificar habitacion");
 		System.out.println(VER_HABITACIONES + ". ver habitaciones");
+		System.out.println(SALIR + ". salir");
+	}
+	
+	public static void mostrarMenuHotel() {
+		System.out.println("Menu hotel");
+		System.out.println(INSERTAR_HOTEL + ". insertar hotel");
+		System.out.println(ELIMINAR_HOTEL + ". eliminar hotel");
+		System.out.println(MODIFICAR_HOTEL + ". modificar hotel");
+		System.out.println(VER_HOTELES + ". ver hoteles");
+		System.out.println(SALIR + ". salir");
+	}
+	
+	public static void mostrarMenuReserva() {
+		System.out.println("Menu reserva");
+		System.out.println(INSERTAR_RESERVA + ". insertar reserva");
+		System.out.println(ELIMINAR_RESERVA + ". eliminar reserva");
+		System.out.println(MODIFICAR_RESERVA + ". modificar reserva");
+		System.out.println(VER_RESERVAS + ". ver reservas");
+		System.out.println(SALIR + ". salir");
 	}
 }

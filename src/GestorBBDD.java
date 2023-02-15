@@ -2,6 +2,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.sql.Date;
 
 public class GestorBBDD extends Conector{
 	PreparedStatement pst;
@@ -69,5 +70,41 @@ public class GestorBBDD extends Conector{
 		}
 		
 		return clientes;
+	}
+	
+	public void insertarHotel(Hotel hotel) throws SQLException {
+		pst = super.con.prepareStatement("INSERT INTO hoteles (cif, nombre, gerente, estrellas, compania) VALUES (?, ?, ?, ?, ?)");
+		
+		pst.setString(1, hotel.getCif());
+		pst.setString(2, hotel.getNombre());
+		pst.setString(3, hotel.getGerente());
+		pst.setInt(4, hotel.getEstrellas());
+		pst.setString(5, hotel.getCompania());
+		
+		pst.execute();
+	}
+	
+	public void insertarHabitacion(Habitacion habitacion) throws SQLException {
+		pst = super.con.prepareStatement("INSERT INTO habitaciones (id, id_hotel, numero, descripcion, precio) VALUES (?, ?, ?, ?, ?)");
+		
+		pst.setInt(1, habitacion.getId());
+		pst.setInt(2, habitacion.getId_hotel());
+		pst.setString(3, habitacion.getNumero());
+		pst.setString(4, habitacion.getDescripcion());
+		pst.setDouble(5, habitacion.getPrecio());
+		
+		pst.execute();
+	}
+	
+	public void insertarReserva(Reserva reserva) throws SQLException {
+		pst = super.con.prepareStatement("INSERT INTO reservas (id, id_habitacion, dni, desde, hasta) VALUES (?, ?, ?, ?, ?)");
+		
+		pst.setInt(1, reserva.getId());
+		pst.setInt(2, reserva.getId_habitacion());
+		pst.setString(3, reserva.getDni());
+		pst.setDate(4, new Date(reserva.getDesde().getTime()));
+		pst.setDate(5, new Date(reserva.getHasta().getTime()));
+		
+		pst.execute();
 	}
 }
